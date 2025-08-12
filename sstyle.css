@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
+
+:root {
+  --italian-red: #b22222; /* tomato red */
+  --olive-green: #556b2f; /* olive/dark green */
+  --cream: #f5f0e1; /* warm cream */
+  --gold: #daa520; /* golden accent */
+  --dark-ink: #2b2b2f; /* dark text */
+  --muted: #7a7a7a;
+}
+
+/* Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--cream);
+  color: var(--dark-ink);
+  line-height: 1.6;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+a {
+  text-decoration: none;
+  color: #eee;
+}
+/* NAVBAR */
+.navbar {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(0, 0, 0, 0.03)
+  );
+  padding: 0.6rem 1rem;
+  backdrop-filter: blur(3px);
+}
+.navbar .navbar-brand {
+  color: var(--dark-ink);
+  text-decoration: none;
+}
+.brand-text .brand-name {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--dark-ink);
+}
+.brand-text .brand-sub {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: -3px;
+}
+
+/* logo */
+.navbar-brand svg {
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* nav links */
+.navbar .nav-link {
+  color: var(--dark-ink);
+  font-weight: 600;
+  margin-left: 8px;
+}
+.navbar .nav-link:hover {
+  color: var(--italian-red);
+  transform: translateY(-2px);
+  transition: 0.18s;
+}
+
+/*home section */
+.home {
+  height:80vh;
+  background: url("../recorce/Food-Lover-main/img/headerr.jpg") center no-repeat;
+  width: 100%;
+  position: relative;
+  color: #090909;
+}
+.home::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.45));
+}
+
+/*content */
+.hero-title {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(1.6rem, 3.8vw, 3rem);
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+.hero-sub {
+  position: relative;
+  z-index: 2;
+  margin-top: 0.5rem;
+  color: #f1e6d6;
+}
+
+/* buttons */
+.btn {
+  border-radius: 12px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+}
+.order-btn {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(90deg, var(--italian-red), #e55a4b);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(178, 34, 34, 0.16);
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: pulse 3s ease-in-out infinite;
+}
+.order-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(178, 34, 34, 0.2);
+}
+
+/* order small (for cards) */
+.order-small {
+  background: var(--olive-green);
+  color: #fff;
+  padding: 0.45rem 0.8rem;
+  border-radius: 10px;
+}
+
+/* outline button */
+.outline-btn {
+  background: transparent;
+  border: 2px solid rgba(0, 0, 0, 0.06);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+
+/* simple pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Sections titles */
+.title h2 {
+  font-weight: 800;
+  color: var(--dark-ink);
+}
+.title .accent {
+  color: var(--italian-red);
+}
+
+/* About */
+#about .img-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  background-color: #f5f0e1;
+  border:#f5f0e1;
+}
+
+/* Offer cards */
+.cardr {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.cardr:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+.cardr .card-img-top {
+  object-fit: cover;
+  height: 275px;
+  width: 100%;
+  display: block;
+}
+
+/* Prices */
+.price {
+  margin-top: 10px;
+  font-weight: 700;
+  color: var(--muted);
+}
+.price del {
+  color: #b7b7b7;
+  margin-right: 8px;
+}
+.new-price {
+  color: var(--gold);
+  font-weight: 900;
+}
+
+/* Menu items */
+#menu {
+  background: transparent;
+  padding: 3.5rem 0;
+}
+.menu-item {
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.menu-item img {
+  width: 115px;
+  height:100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.btn-menu a {
+  color: #2b2b2f;
+  display: inline;
+}
+.btn-menu {
+  background-color: #5a6d38;
+}
+
+/* text-menu price tag */
+.text-menu {
+  color: var(--gold);
+  font-weight: 700;
+  margin-left: 8px;
+}
+
+/* contact cards */
+.contact .card {
+  border-radius: 12px;
+}
+
+/* Footer */
+#footer {
+  background: var(--dark-ink);
+  color: #fff;
+}
+
+/* Responsive*/
+@media (max-width: 768px) {
+  .navbar .nav-link {
+    font-size: 0.95rem;
+  }
+  .hero-title {
+    font-size: 1.6rem;
+  }
+  .menu-item img {
+    width: 64px;
+    height: 64px;
+    margin-right: 18px;
+  }
+  .offer img {
+    height: 200px;
+  }
+  .menu-items img {
+    width: 90px;
+    height: 90px;
+  }
+}
